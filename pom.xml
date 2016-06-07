@@ -6,7 +6,7 @@
     <artifactId>amazon-kinesis-client</artifactId>
     <packaging>jar</packaging>
     <name>Amazon Kinesis Client Library for Java</name>
-    <version>1.6.3</version>
+    <version>1.6.3.11-SNAPSHOT</version>
     <description>The Amazon Kinesis Client Library for Java enables Java developers to easily consume and process data from Amazon Kinesis.</description>
     <url>https://aws.amazon.com/kinesis</url>
 
@@ -90,23 +90,6 @@
           </plugin>
         </plugins>
       </pluginManagement>
-
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-gpg-plugin</artifactId>
-          <version>1.5</version>
-          <executions>
-            <execution>
-              <id>sign-artifacts</id>
-              <phase>verify</phase>
-              <goals>
-                <goal>sign</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-      </plugins>
     </build>
 
 </project>
