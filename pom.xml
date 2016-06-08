@@ -1,11 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.amazonaws</groupId>
     <artifactId>amazon-kinesis-client</artifactId>
     <packaging>jar</packaging>
     <name>Amazon Kinesis Client Library for Java</name>
-    <version>1.6.3-EROAD-4-SNAPSHOT</version>
+    <version>1.6.3-EROAD-4</version>
     <description>The Amazon Kinesis Client Library for Java enables Java developers to easily consume and process data
         from Amazon Kinesis.
     </description>
@@ -15,7 +14,7 @@
         <connection>scm:git:git:://github.com:eroad/amazon-kinesis-client.git</connection>
         <developerConnection>scm:git:git@github.com:eroad/amazon-kinesis-client.git</developerConnection>
         <url>https://github.com/eroad/amazon-kinesis-client</url>
-        <tag>1.6.3-EROAD-1</tag>
+        <tag>amazon-kinesis-client-1.6.3-EROAD-4</tag>
     </scm>
 
     <properties>
