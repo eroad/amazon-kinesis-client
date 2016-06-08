@@ -4,7 +4,7 @@
     <artifactId>amazon-kinesis-client</artifactId>
     <packaging>jar</packaging>
     <name>Amazon Kinesis Client Library for Java</name>
-    <version>1.6.3-EROAD-4</version>
+    <version>1.6.3-EROAD-5-SNAPSHOT</version>
     <description>The Amazon Kinesis Client Library for Java enables Java developers to easily consume and process data
         from Amazon Kinesis.
     </description>
@@ -14,7 +14,7 @@
         <connection>scm:git:git:://github.com:eroad/amazon-kinesis-client.git</connection>
         <developerConnection>scm:git:git@github.com:eroad/amazon-kinesis-client.git</developerConnection>
         <url>https://github.com/eroad/amazon-kinesis-client</url>
-        <tag>amazon-kinesis-client-1.6.3-EROAD-4</tag>
+        <tag>1.6.3-EROAD-1</tag>
     </scm>
 
     <properties>
