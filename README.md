@@ -1,5 +1,10 @@
 # Amazon Kinesis Client Library for Java 
 
+## CI Build Information
+| Release |
+|----------|
+ [![Build Status](https://concoursebadge.eroad.io/concourse-badge?pipeline=amazon-kinesis-client&job=build-deploy)](https://concourse.eroad.io/teams/main/pipelines/amazon-kinesis-client)
+
 The **Amazon Kinesis Client Library for Java** (Amazon KCL) enables Java developers to easily consume and process data from [Amazon Kinesis][kinesis].
 
 * [Kinesis Product Page][kinesis]
