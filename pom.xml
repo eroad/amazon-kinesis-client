@@ -18,7 +18,7 @@
     </scm>
 
     <properties>
-        <aws-java-sdk.version>1.11.5</aws-java-sdk.version>
+        <aws-java-sdk.version>1.11.6</aws-java-sdk.version>
         <maven.javadoc.skip>true</maven.javadoc.skip>
     </properties>
 
