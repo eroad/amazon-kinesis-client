@@ -119,27 +119,38 @@ jobs:
     params:
       path: amazon-kinesis-client-pullrequest
       status: pending
-  - task: maven-build
-    privileged: true
-    file: pipeline-task/maven-v2/tasks/maven-dind-build.yml
-    input_mapping:
-      repo: amazon-kinesis-client-pullrequest
-      version: release-version
-    params:
-      NEXUS_USER: ((nexus-user))
-      NEXUS_PASSWORD: ((nexus-password))
-      MAVEN_PHASES: verify
-      MAVEN_USE_VERSIONS_PLUGIN: true
-    on_failure:
-      put: amazon-kinesis-client-pullrequest
+  - in_parallel:
+    - task: maven-build
+      privileged: true
+      file: pipeline-task/maven-v2/tasks/maven-dind-build.yml
+      input_mapping:
+        repo: amazon-kinesis-client-pullrequest
+        version: release-version
       params:
-        path: amazon-kinesis-client-pullrequest
-        status: failure
-    on_success:
-      put: amazon-kinesis-client-pullrequest
+        NEXUS_USER: ((nexus-user))
+        NEXUS_PASSWORD: ((nexus-password))
+        MAVEN_PHASES: verify
+        MAVEN_USE_VERSIONS_PLUGIN: true
+      on_failure:
+        put: amazon-kinesis-client-pullrequest
+        params:
+          path: amazon-kinesis-client-pullrequest
+          status: failure
+      on_success:
+        put: amazon-kinesis-client-pullrequest
+        params:
+          path: amazon-kinesis-client-pullrequest
+          status: success
+    - task: checkmarx
+      file: pipeline-task/checkmarx-sast/tasks/checkmarx-sast.yml
+      input_mapping: { repo: amazon-kinesis-client-pullrequest }
       params:
-        path: amazon-kinesis-client-pullrequest
-        status: success
+        REPO_NAME: amazon-kinesis-client
+        SOURCE_DIR: repo
+        LOCATION_PATH_EXCLUDE: test,build,ci,coverage
+        TEAM_NAME: Event
+        USERNAME: ((SSM-checkmarx-eventteam-username))
+        PASSWORD: ((SSM-checkmarx-eventteam-password))
 
 - name: build-deploy
   serial: true
